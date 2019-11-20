@@ -1,5 +1,4 @@
 import { IUnitSystem } from "./interfaces/iUnitSystem";
-export interface IUnitSystems {
-    [key: string]: IUnitSystem;
-}
-export declare const UnitSystems: IUnitSystems;
+import UnitSystemNames from "./unit-systems-names";
+export declare const UnitSystems: IUnitSystem[];
+export { UnitSystemNames };

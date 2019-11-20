@@ -1,4 +1,4 @@
-import { UnitConverter } from "../../src"
+import { UnitConverter, UnitSystemNames } from "../../src"
 
 describe("Test volume converting", () => {
     it("Should convert milliliters correctly", () => {
@@ -7,7 +7,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "ml", returnUnit: "cm3", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -17,7 +17,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "cl", returnUnit: "dl", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -27,7 +27,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "dl", returnUnit: "l", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -38,7 +38,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "l", returnUnit: "dm3", expectedReturn: 1 },
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -48,7 +48,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "kl", returnUnit: "m3", expectedReturn: 1 },
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -57,7 +57,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "mm3", returnUnit: "cm3", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -68,7 +68,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "cm3", returnUnit: "ml", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -79,7 +79,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "dm3", returnUnit: "l", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -90,7 +90,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "m3", returnUnit: "kl", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -99,7 +99,7 @@ describe("Test volume converting", () => {
             { inputValue: 1, startUnit: "km3", returnUnit: "m3", expectedReturn: 1000000000 },
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Volume).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 });

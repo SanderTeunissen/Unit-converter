@@ -1,4 +1,4 @@
-import { UnitConverter } from "../../src"
+import { UnitConverter, UnitSystemNames } from "../../src"
 
 describe("Test energy converting", () => {
     it("Should convert milliwatthour correctly", () => {
@@ -8,7 +8,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "mWh", returnUnit: "kJ", expectedReturn: 0.0036 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -20,7 +20,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "Wh", returnUnit: "kJ", expectedReturn: 3.6 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -32,7 +32,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "kWh", returnUnit: "kJ", expectedReturn: 3600 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -44,7 +44,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "MWh", returnUnit: "kJ", expectedReturn: 3600000 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -55,7 +55,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "GWh", returnUnit: "kJ", expectedReturn: 3600000000 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -66,7 +66,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "J", returnUnit: "kJ", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -77,7 +77,7 @@ describe("Test energy converting", () => {
             { inputValue: 1, startUnit: "kJ", returnUnit: "J", expectedReturn: 1000 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Energy).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 });

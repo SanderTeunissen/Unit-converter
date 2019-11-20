@@ -1,3 +1,5 @@
 import { Converter } from "./converter";
-export declare const UnitConverter: (value: number) => Converter;
+import { UnitSystemNames } from "./units";
+export declare const UnitConverter: (value: number, unitSystemName: UnitSystemNames) => Converter;
+export { UnitSystemNames };
 export default UnitConverter;
