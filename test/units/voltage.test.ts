@@ -1,4 +1,4 @@
-import { UnitConverter } from "../../src"
+import { UnitConverter, UnitSystemNames } from "../../src"
 
 describe("Test voltage converting", () => {
     it("Should convert millivolt correctly", () => {
@@ -6,7 +6,7 @@ describe("Test voltage converting", () => {
             { inputValue: 1, startUnit: "mV", returnUnit: "V", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Voltage).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -16,7 +16,7 @@ describe("Test voltage converting", () => {
             { inputValue: 1, startUnit: "V", returnUnit: "kV", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Voltage).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -26,7 +26,7 @@ describe("Test voltage converting", () => {
             { inputValue: 1, startUnit: "kV", returnUnit: "MV", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Voltage).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -36,7 +36,7 @@ describe("Test voltage converting", () => {
             { inputValue: 1, startUnit: "MV", returnUnit: "GV", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Voltage).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -46,7 +46,7 @@ describe("Test voltage converting", () => {
             { inputValue: 1, startUnit: "GV", returnUnit: "TV", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Voltage).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -55,7 +55,7 @@ describe("Test voltage converting", () => {
             { inputValue: 1, startUnit: "TV", returnUnit: "GV", expectedReturn: 1000 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Voltage).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 });

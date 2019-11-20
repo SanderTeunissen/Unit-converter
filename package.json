@@ -10,10 +10,13 @@
   },
   "author": "Sander Teunissen",
   "license": "mit",
-  "dependencies": {},
+  "dependencies": {
+    "bigint-typescript-definitions": "^5.5.3-0"
+  },
   "devDependencies": {
     "@types/jest": "^24.0.13",
     "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.1"
   },

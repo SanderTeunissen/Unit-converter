@@ -1,4 +1,4 @@
-import { UnitConverter } from "../../src"
+import { UnitConverter, UnitSystemNames } from "../../src"
 
 describe("Test current converting", () => {
     it("Should convert milliseconds correctly", () => {
@@ -6,7 +6,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "ms", returnUnit: "s", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -16,7 +16,7 @@ describe("Test current converting", () => {
             { inputValue: 60, startUnit: "s", returnUnit: "min", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -26,7 +26,7 @@ describe("Test current converting", () => {
             { inputValue: 60, startUnit: "min", returnUnit: "h", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -36,7 +36,7 @@ describe("Test current converting", () => {
             { inputValue: 24, startUnit: "h", returnUnit: "d", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -46,7 +46,7 @@ describe("Test current converting", () => {
             { inputValue: 7, startUnit: "d", returnUnit: "week", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -56,7 +56,7 @@ describe("Test current converting", () => {
             { inputValue: 52.1785, startUnit: "week", returnUnit: "month", expectedReturn: 12 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -66,7 +66,7 @@ describe("Test current converting", () => {
             { inputValue: 12, startUnit: "month", returnUnit: "year", expectedReturn: 1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -75,7 +75,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "year", returnUnit: "month", expectedReturn: 12 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Time).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 });

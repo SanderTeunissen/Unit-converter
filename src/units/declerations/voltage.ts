@@ -1,50 +1,15 @@
 import { IUnitSystem } from "../interfaces/iUnitSystem";
+import UnitSystemNames from "../unit-systems-names";
 
 export const Voltage: IUnitSystem = {
-    name: "Spanning",
+    name: UnitSystemNames.Voltage,
     base: "V",
     units: {
-        mV: {
-            name: {
-                singular: 'Millivolt',
-                plural: 'Millivolt'
-            },
-            to_base: 1 / 1000
-        },
-        V: {
-            name: {
-                singular: 'Volt',
-                plural: 'Volt'
-            },
-            to_base: 1
-        },
-        kV: {
-            name: {
-                singular: 'Kilovolt',
-                plural: 'Kilovolt'
-            },
-            to_base: 1000
-        },
-        MV: {
-            name: {
-                singular: 'Megavolt',
-                plural: 'Megavolt'
-            },
-            to_base: 1000000
-        },
-        GV: {
-            name: {
-                singular: 'Gigavolt',
-                plural: 'Gigavolt'
-            },
-            to_base: 1000000000
-        },
-        TV: {
-            name: {
-                singular: 'Teravolt',
-                plural: 'Teravolt'
-            },
-            to_base: 1000000000000
-        }
+        mV: 1 / 1000,
+        V: 1,
+        kV: 1000,
+        MV: 1000000,
+        GV: 1000000000,
+        TV: 1000000000000
     }
 }

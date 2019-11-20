@@ -1,4 +1,4 @@
-import { UnitConverter } from "../../src"
+import { UnitConverter, UnitSystemNames } from "../../src"
 
 describe("Test current converting", () => {
     it("Should convert nanometer correctly", () => {
@@ -6,7 +6,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "nm", returnUnit: "µm", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -16,7 +16,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "µm", returnUnit: "mm", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -26,7 +26,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "mm", returnUnit: "cm", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -36,7 +36,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "cm", returnUnit: "dm", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -46,7 +46,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "dm", returnUnit: "m", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -56,7 +56,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "m", returnUnit: "dam", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -66,7 +66,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "dam", returnUnit: "hm", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -76,7 +76,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "hm", returnUnit: "km", expectedReturn: 0.1 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -86,7 +86,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "km", returnUnit: "Mm", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -96,7 +96,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "Mm", returnUnit: "Gm", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -106,7 +106,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "Gm", returnUnit: "Tm", expectedReturn: 0.001 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 
@@ -115,7 +115,7 @@ describe("Test current converting", () => {
             { inputValue: 1, startUnit: "Tm", returnUnit: "Gm", expectedReturn: 1000 }
         ];
         testValues.map(tv => {
-            expect(UnitConverter(tv.inputValue).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
+            expect(UnitConverter(tv.inputValue, UnitSystemNames.Length).from(tv.startUnit).to(tv.returnUnit).calculate()).toBeCloseTo(tv.expectedReturn, 4);
         });
     });
 });
