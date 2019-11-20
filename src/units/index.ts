@@ -9,9 +9,10 @@ import { Power } from "./declerations/power";
 import { Time } from "./declerations/time";
 import { Voltage } from "./declerations/voltage";
 import { Volume } from "./declerations/volume";
+import { Bit } from "./declerations/bit";
 
 export const UnitSystems: IUnitSystem[] = [
-    Current, Energy, Length, Power, Time, Voltage, Volume
+    Bit, Current, Energy, Length, Power, Time, Voltage, Volume
 ]
 
 export { UnitSystemNames }

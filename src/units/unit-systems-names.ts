@@ -1,4 +1,5 @@
 enum UnitSystemNames {
+  Bit = 'bit',
   Current = "current",
   Energy = "energy",
   Length = "length",
